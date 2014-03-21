@@ -1,0 +1,1 @@
+math.d: ../math.c
