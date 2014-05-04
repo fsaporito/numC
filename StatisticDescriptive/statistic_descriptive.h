@@ -16,6 +16,8 @@
 	//  Ponderate Arithmetic Average
 	double average_ari_pond (double *vector_data, double *vector_freq, int lenght); // Require vector_el_sum && vector_vector_sum
 
+	//  Mode
+	double mode (double *vector_data, int lenght);
 
 
 
