@@ -12,7 +12,7 @@ double average_ari (double *vector_data, int lenght) { // Require vector_el_sum
 	double sum;
 	double result;
 
-	sum = vector_el_sum (vector_data,lenght);
+	sum = vector_el_sum (vector_data, lenght);
 
 	result = sum / lenght;
 
@@ -27,14 +27,20 @@ double average_ari (double *vector_data, int lenght) { // Require vector_el_sum
  *
  */
 
-double average_ari_pond (double *vector_data, double *vector_freq, int lenght) { // Require vector_el_sum && vector_vector_sum
+double average_ari_pond (double *vector_data, double *vector_freq, int lenght) { // Require vector_el_sum && vector_vector_mult && vector_num_div
 
-	double sum;
+	double fr_sum;
+	double mult[lenght];
+	double mult_fr[lenght];
 	double result;
 
-	sum = vector_el_sum (vector_data,lenght);
+	fr_sum = vector_el_sum (vector_data, lenght);
 
-	result = sum / lenght;
+	vector_vector_mult (vector_data, vector_freq, mult, lenght);
+
+	vector_num_div (mult, fr_sum, mult_fr, lenght);
+
+	result = vector_el_sum (mult, lenght);
 
 	return result;
 
