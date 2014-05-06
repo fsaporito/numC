@@ -14,11 +14,14 @@
 	// Arithmetic Average
 	inline  double average_ari (double *vector_data, int lenght); // Require vector_el_sum
 
-	//  Ponderate Arithmetic Average
+	// Ponderate Arithmetic Average
 	double average_ari_pond (double *vector_data, double *vector_freq, int lenght); // Require vector_el_sum && vector_vector_mult && vector_num_div
 
-	//  Mode
+	// Mode
 	double mode (double *vector_data, int lenght);
+
+	// Median
+	double median (double *vector_data, int lenght);
 
 
 
