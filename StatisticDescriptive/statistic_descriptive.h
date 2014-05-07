@@ -12,7 +12,7 @@
 
 
 	// Arithmetic Average
-	inline  double average_ari (double *vector_data, int lenght); // Require vector_el_sum
+	double average_ari (double *vector_data, int lenght); // Require vector_el_sum
 
 	// Ponderate Arithmetic Average
 	double average_ari_pond (double *vector_data, double *vector_freq, int lenght); // Require vector_el_sum && vector_vector_mult && vector_num_div
@@ -31,13 +31,19 @@
 
 
 	// Variation
-	inline void variation (double *vector_data, double *vector_variation, int lenght); // Require average_ari_pond
+	void variation (double *vector_data, double *vector_variation, int lenght); // Require average_ari_pond
 
 	// Variance
 	double variance (double *vector_data, double *vector_freq, int lenght); // Require vector_vector_mult && vector_el_sum && variation
 
 	// Standard Deviation
 	double standard_deviation (double *vector_data, double *vector_freq, int lenght); // Require variance
+
+	// Absolute Mean Value
+	double mean_abs (double *vector_data, double *vector_freq, int lenght);
+
+	// Coefficient Of Variation
+	double cv (double *vector_data, double *vector_freq, int lenght);
 
 
 

@@ -57,10 +57,59 @@ double standard_deviation (double *vector_data, double *vector_freq, int lenght)
 
 	double result;
 
-	result = sqrt (variance (vector_data,vector_freq,lenght));
+	result = sqrt (variance (vector_data, vector_freq, lenght));
 
 	return result;
 
 }
 
+
+
+// Absolute Mean Value
+/*
+ * Abs_Mean_VAL = sum(abs(x[i] - X_av)
+ *
+ */
+
+double mean_abs (double *vector_data, double *vector_freq, int lenght) {
+
+
+	double average;
+	double result;
+
+	int i = 0;
+
+	average = average_ari (vector_data, lenght);
+
+	for (i = 0; i < lenght; i++) {
+
+		result += abs(vector_data[i] - average);
+
+	}
+
+	return result;
+
+}
+
+
+
+// Coefficient Of Variation
+/*
+ * Sd = standard_deviation/average
+ *
+ */
+
+double cv (double *vector_data, double *vector_freq, int lenght) { // Require variance
+
+	double result;
+
+	double stand_deviation = standard_deviation (vector_data, vector_freq, lenght);
+
+	double avg_pond =  ari_average_pond (vector_data, vector_freq, lenght);
+
+	result = stand_deviation / avg_pond;
+
+	return result;
+
+}
 
