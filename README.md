@@ -11,7 +11,7 @@ Central Tendencies -> https://en.wikipedia.org/wiki/Central_tendency
 - Arithmetic Average
 - Arithmetic Pondered Average
 - Mode
--Median
+- Median
 
 
 Dispersion -> https://en.wikipedia.org/wiki/Statistical_dispersion
