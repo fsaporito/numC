@@ -15,7 +15,7 @@ C numerical library that implements various algorithms for
 Combinatorics
 
 - Bynomial Factor
- - Simple Combinations
+- Simple Combinations
 - Combinations  with Repetitions
 - Simple Dispositions
 - Dispositions with Repetitions
@@ -26,7 +26,7 @@ Combinatorics
 ====
 Definite Integrals
 
- - Rectangles Method
+- Rectangles Method
 - Trapezis Method
 - Simpson Method
 
@@ -54,6 +54,6 @@ Dispersion -> https://en.wikipedia.org/wiki/Statistical_dispersion
 ====
 Roots
 
- - Dicotomic Method
+- Dicotomic Method
 - Cord Method
 - Newton Method
