@@ -2,46 +2,57 @@
 #include "../Matrices/matrix.h"
 #include "test.h"
 
+int testMatrix (int length) {
 
-void test_matrix (int lenght) {
+	rintf ("\nTesting Square Matrix Of Order %i\n\n", length);
 
+		double matrix_tmp[length*length]; // First Matrix; // First Matrix
 
-	printf ("\nTesting Square Matrix Of Order %i\n\n", lenght);
+		int i = 0; // For Loop Variable
 
-	double **m1; // First Matrix, Order 2
+		double k = 1.0;
 
-	int i; // For Loop Variable
-	int j; // For Loop Variable
-
-	int k = 1;
-
-	m1 =(double **) malloc (sizeof(double *)*2); // Matrix Allocation
-
-	for (i = 0; i < lenght; i++) { // Arrays Allocation
-
-		m1[i] =(double *) malloc (sizeof(int)*lenght);
-
-	}
-
-	for ( i = 0; i < lenght; i++) {
-
-		for ( j = 0; j < lenght; j++) {
-
-			m1[i][j] = k;
-
-			k++;
-
-	 	}
-
-	}
+		matrix_print(matrix_tmp, length);
 
 
-	matrix_print(m1, lenght);
+		printf ("\n[*] Adding Numbers:\n");
 
-	double det1 = matrix_det (m1, lenght);
+		for ( i = 0; i < length*length; i++) {
 
-	printf ("\n");
+				printf ("[k=%lf] Number[%i] = ", k, i);
 
-	printf ("Calculated Determinant = %lf\n", det1);
+				matrix_tmp[i] = k;
+
+				printf (" %lf  (expected: [%lf])", matrix_tmp[i], k);
+
+				k = k+1;
+
+				printf ("	OK\n");
+				printf (" K+1=%lf\n\n\n", k);
+
+		}
+
+		for ( i = 0; i < length; i++) {
+
+			printf ("\nNumber[%i] = %lf", i, matrix_tmp[i]);
+
+		}
+
+		printf ("\n[*] Matrix Print:\n\n");
+
+
+		matrix_print(matrix_tmp, length);
+
+		printf ("\n[*]Determinant Calculation:");
+
+		double det1 = matrix_det (matrix_tmp, length);
+
+		printf ("	OK \n");
+
+		printf ("Calculated Determinant = %lf\n", det1);
+	
+	
+	
+    return 0;
 
 }
