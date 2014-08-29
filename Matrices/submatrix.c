@@ -2,29 +2,30 @@
 
 
 // SubMatrix Without Raw I And Column J
-inline void submatrix_c (double **matrix, double **m_tmp, int lenght, int I, int J) {
+inline void submatrix (double matrix[], double m_tmp[], int lenght, int I, int J) {
 
-	int i;
-	int j;
+	int i = 0;
+
 
 	int a = 0;
-	int b = 0;
 
-	for ( i = 0; i < lenght; i++) {
 
-		if (i != I) {
+	int rawNumber = 0;
 
-			a++;
+	for ( i = 0; i < lenght*lenght; i++) {
 
-			for ( j = 0; j < lenght; j++) {
+		if (i == lenght) {
 
-				if (j != J) {
+			rawNumber++;
+		}
 
-					b++;
+		if (rawNumber != I) {
 
-					m_tmp[a][b] = matrix[i][j];
+			if (i != (lenght-1)*I + J) {
 
-				}
+				a++;
+
+				m_tmp[a] = matrix[i];
 
 			}
 
