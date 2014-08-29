@@ -1,28 +1,42 @@
 
 #include "matrix.h"
-#include "stdio.h"
+
 
 // Matrix Print
 /*
  * Print A Given Matrix
  *
  */
-inline void matrix_print (double **matrix, int lenght) {
+inline void matrix_print (double matrix[], int lenght) {
 
-	int i;
-	int j;
+	int i = 0;
+	int rowNumber = 0;
 
-	for ( i = 0; i < lenght; i++) {
+	printf ("\n\n");
 
-		printf ("|");
+	for ( i = 0; i < lenght*lenght; i++) {
 
-		for (j=0; j<lenght; j++) {
+		if (i == rowNumber*lenght) {
 
- 			printf ("  %lf  ",matrix[i][j]);
+			printf ("|");
 
 		}
 
-		printf ("| \n");
+		printf ("  %lf  ", matrix[i]);
+
+		if (i == lenght - 1 ) {
+
+
+
+		}
+
+		if (i == (rowNumber+1)*lenght -1 ) {
+
+			rowNumber++;
+
+			printf ("| \n");
+
+		}
 
 	}
 
