@@ -1,5 +1,5 @@
 
-#include "../Matrices/matrix.h"
+
 #include "test.h"
 
 int testMatrix (int length) {
