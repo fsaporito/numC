@@ -26,7 +26,7 @@ inline double integ_trap (double (function) (double x), double extr_a, double ex
 	double X[intervals_num]; // Array dx [base] Of Every Rectangle
 	double Y[intervals_num]; // Array f(x) [height] Of Every Rectangle
 
-	base = (extr_b - extr_a)/intervals_num;
+	base = abs((extr_b - extr_a)/intervals_num);
 
 	funz_extr_a = function (extr_a);
 	funz_extr_b = function (extr_b);
@@ -53,7 +53,7 @@ inline double integ_trap (double (function) (double x), double extr_a, double ex
 	integ = base*(((funz_extr_b - funz_extr_a)/2) + Y[0]);
 
 // Successive Points
-	for (i=1; i<intervals_num; i++) {
+	for (i = 1; i < intervals_num; i++) {
 
 		X[i] = X[i-1] + base;
 		Y[i] = function (X[i]);

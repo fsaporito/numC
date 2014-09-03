@@ -41,7 +41,7 @@ inline double newton (double extr_a, double extr_b, double (*function) (double x
 
 		der[inter] = deriv1 (X[inter]);  // deriv1(X[i]
 
-	} while (absolute(X[inter - 1] - X[inter]) > precision || inter < MAX_INTER);
+	} while (abs(X[inter - 1] - X[inter]) > precision || inter < MAX_INTER);
 
 	zero = X[inter];
 

@@ -21,7 +21,7 @@ long int disp_r (int n_disp_r, int k_disp_r) {
 
 	long int result; // Result To Return
 
-	result = expon (n_disp_r,k_disp_r);
+	result = pow (n_disp_r,k_disp_r);
 
 	return result;
 

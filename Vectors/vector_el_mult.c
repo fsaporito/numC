@@ -8,7 +8,7 @@
  *
  */
 
-inline double vector_el_mult (double *vector, int lenght) {
+double vector_el_mult (double *vector, int lenght) {
 
 	 double mult; // n1 * n2 * n3 .... * nk
 	 int h; // For Loop Variable

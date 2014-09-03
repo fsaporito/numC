@@ -8,7 +8,7 @@
  * Vector_Vector_Inner = [1*5 + 2*6 + 3*7 + 4*8] = [5+12+21+32] = 70
  *
  */
-inline void vector_vector_inner (double *vector1, double *vector2, double result, int lenght) {
+void vector_vector_inner (double *vector1, double *vector2, double result, int lenght) {
 
 	double vector_tmp[lenght];
 

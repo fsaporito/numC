@@ -8,7 +8,7 @@
  *
  */
 
-inline double vector_el_sum (double *vector, int lenght) {
+double vector_el_sum (double *vector, int lenght) {
 
 	 double sum; // n1 + n2 + n3 .... + nk
 	 int h; // For Loop Variable

@@ -9,7 +9,7 @@
  * n*V = [5*1,5*2,5*3,5*4] = [5,10,15,20]
  *
  */
-inline void vector_num_mult (double *vector, double num, double *vector_result, int lenght) {
+void vector_num_mult (double *vector, double num, double *vector_result, int lenght) {
 
 	int h; // For Loop Variable
 

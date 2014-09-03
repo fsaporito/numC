@@ -4,7 +4,8 @@
 
 	#define MAX_DIM 30 // Max Number Of Raws Permitted
 	
-	#include "stdio.h
+	#include "stdio.h"
+	#include "math.h"
 
 
 	// Matrix Print
@@ -16,7 +17,7 @@
 
 
 	// SubMatrix Without Raw I And Column J
-	inline void submatrix_c (double matrix[], double m_tmp[], int lenght, int I, int J);
+	inline void submatrix (double matrix[], double m_tmp[], int lenght, int I, int J);
 
 
 #endif

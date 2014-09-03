@@ -17,10 +17,10 @@ inline int isPerfect (int number) {
 
 	if (number > 0) {
 
-		long int i;
-		long int tmp;
+		long int i = 0;
+		long int tmp = 0;
 
-		for (i=1; i<=(number/2); i++) {
+		for (i = 1; i <= (number/2); i++) {
 
 			if (number%i == 0) {
 

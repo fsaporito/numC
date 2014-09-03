@@ -4,7 +4,7 @@
 
 	#define MAX_INTER 10000 // Max Number Of Iterations Permitted
 
-	#include "../Functions/functions.h" // Absolute
+	#include "stdlib.h" // abs
 
 
 	// Dicotomic Method

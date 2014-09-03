@@ -35,7 +35,7 @@ inline double dicotomic (double extr_a, double extr_b, double (*function) (doubl
 
 		if( B*M < 0. ) { extr_a = medium[inter]; A = M; }
 
-	} while (absolute(medium[inter - 1] - medium[inter]) > precision || inter < MAX_INTER);
+	} while (abs(medium[inter - 1] - medium[inter]) > precision || inter < MAX_INTER);
 
 	return medium[inter];
 

@@ -4,6 +4,8 @@
 	#define STATISTIC_DESCRIPTIVE_H
 
 	#include "../Vectors/vector.h"
+	#include "math.h"
+	#include "stdlib.h"
 
 
 	/***************************/
@@ -31,7 +33,7 @@
 
 
 	// Variation
-	void variation (double *vector_data, double *vector_variation, int lenght); // Require average_ari_pond
+	void variation (double *vector_data, double *vector_freq, double *vector_variation, int lenght); // Require average_ari_pond
 
 	// Variance
 	double variance (double *vector_data, double *vector_freq, int lenght); // Require vector_vector_mult && vector_el_sum && variation

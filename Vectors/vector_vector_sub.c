@@ -9,7 +9,7 @@
  *
  */
 
-inline void vector_vector_sub (double *vector1, double *vector2, double *vector_result, int lenght) {
+void vector_vector_sub (double *vector1, double *vector2, double *vector_result, int lenght) {
 
 	int h; // For Loop Variable
 

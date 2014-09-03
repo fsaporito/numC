@@ -29,7 +29,7 @@ inline void integ_rect (double (function) (double x), double extr_a, double extr
 	double X[intervals_num]; // Array dx [base] Of Every Rectangle
 	double Y[intervals_num]; // Array f(x) [height] Of Every Rectangle
 
-	base = (extr_b - extr_a)/intervals_num;
+	base = abs((extr_b - extr_a)/intervals_num);
 
 
 
@@ -60,8 +60,8 @@ inline void integ_rect (double (function) (double x), double extr_a, double extr
 	*integ_first = base*(Y[0]);
 	*integ_second = 0;
 
-// I
-	for (i=1; i<=intervals_num; i++) {
+// Iterations
+	for (i = 1; i <= intervals_num; i++) {
 
 		X[i] = X[i-1] + base;
 		Y[i] = function (X[i]);

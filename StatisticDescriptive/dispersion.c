@@ -14,7 +14,11 @@ void variation (double *vector_data, double *vector_freq, double *vector_variati
 
 	Av = average_ari_pond (vector_data,vector_freq,lenght);
 
-	for (i=0; i<lenght; i++) { vector_variation[i] = vector_data[i] - Av; }
+	for (i = 0; i < lenght; i++) { 
+		
+		vector_variation[i] = vector_data[i] - Av; 
+		
+	}
 
 }
 
@@ -74,8 +78,8 @@ double standard_deviation (double *vector_data, double *vector_freq, int lenght)
 double mean_abs (double *vector_data, double *vector_freq, int lenght) {
 
 
-	double average;
-	double result;
+	double average = 0.0;
+	double result = 0.0;
 
 	int i = 0;
 
@@ -105,7 +109,7 @@ double cv (double *vector_data, double *vector_freq, int lenght) { // Require va
 
 	double stand_deviation = standard_deviation (vector_data, vector_freq, lenght);
 
-	double avg_pond =  ari_average_pond (vector_data, vector_freq, lenght);
+	double avg_pond =  average_ari_pond (vector_data, vector_freq, lenght);
 
 	result = stand_deviation / avg_pond;
 

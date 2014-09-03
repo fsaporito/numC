@@ -13,7 +13,6 @@ inline double cords (double extr_a, double extr_b, int mode, double (*function) 
 
 	double funz_extr_a; // F(a)
 	double funz_extr_b; // F(b)
-	int i; // For Loop Variable
 	double X_intersec; // Intersection  Between The Function And The X Axis
 	double Y_intersec; // Image Of The Intersection
 	double root; // Result

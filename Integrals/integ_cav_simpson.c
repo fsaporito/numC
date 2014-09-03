@@ -27,7 +27,7 @@ inline double integ_cav_simpson (double (function) (double x), double extr_a, do
 	double X[2*intervals_num]; // Array dx [base] Of Every Rectangle
 	double Y[2*intervals_num]; // Array f(x) [height] Of Every Rectangle
 
-	base = absolute((extr_b - extr_a))/(2*intervals_num);
+	base = abs((extr_b - extr_a))/(2*intervals_num);
 
 
 
@@ -56,7 +56,7 @@ inline double integ_cav_simpson (double (function) (double x), double extr_a, do
 	Y[0] = function (X[0]);
 
 // Points And Images Calculation
-	for (i=1; i<=(2*intervals_num); i++) {
+	for (i = 1; i <= (2*intervals_num); i++) {
 
 		X[i] = X[i-1] + base; Y[i] = X[i]*X[i]*X[i];
 
@@ -66,11 +66,19 @@ inline double integ_cav_simpson (double (function) (double x), double extr_a, do
 
 	odd_sum = 0;
 
-	for (i=1; i<=(2*intervals_num-1); i+=2) { odd_sum += Y[i]; }
+	for (i = 1; i <= (2*intervals_num-1); i += 2) { 
+		
+		odd_sum += Y[i]; 
+		
+	}
 
 	even_sum = 0;
 
-	for (i=2; i<=(2*intervals_num-2); i+=2) { even_sum += Y[i]; }
+	for (i = 2; i <= (2*intervals_num-2); i += 2 ) { 
+		
+		even_sum += Y[i]; 
+		
+	}
 
 
 	integ = (2*base/6)*(Y[0] + Y[2*intervals_num] + 2*odd_sum + 4*even_sum);

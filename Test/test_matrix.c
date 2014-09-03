@@ -1,10 +1,8 @@
-
-
 #include "test.h"
 
-int testMatrix (int length) {
+void test_matrix (int length) {
 
-	rintf ("\nTesting Square Matrix Of Order %i\n\n", length);
+	printf ("\nTesting Square Matrix Of Order %i\n\n", length);
 
 		double matrix_tmp[length*length]; // First Matrix; // First Matrix
 
@@ -50,9 +48,6 @@ int testMatrix (int length) {
 		printf ("	OK \n");
 
 		printf ("Calculated Determinant = %lf\n", det1);
-	
-	
-	
-    return 0;
+
 
 }

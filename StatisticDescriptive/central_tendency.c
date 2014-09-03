@@ -56,7 +56,7 @@ double average_ari_pond (double *vector_data, double *vector_freq, int lenght) {
 
 double mode (double *vector_data, int lenght) {
 
-	double mode = vector_data[0];
+	double mode =(double) vector_data[0];
 
 	int i = 0; // For Loop Variable
 
@@ -84,7 +84,7 @@ double mode (double *vector_data, int lenght) {
 
 double median (double *vector_data, int lenght) {
 
-	double median = vector_data[0];
+	double median =(double) vector_data[0];
 
 	if (lenght > 1) {
 
@@ -96,7 +96,7 @@ double median (double *vector_data, int lenght) {
 
 			arr[1] = vector_data[(int)(lenght/2)];
 
-			median = averge_ari (arr, 2);
+			median = average_ari (arr, 2);
 
 		} else {
 
@@ -106,7 +106,7 @@ double median (double *vector_data, int lenght) {
 
 	}
 
-	return mode;
+	return median;
 
 }
 

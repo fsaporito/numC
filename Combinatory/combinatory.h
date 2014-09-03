@@ -3,7 +3,7 @@
 	#define _COMBINATORY_H_
 
 	#include "../NumberTheory/number_theory.h" // Factorial Definition
-	#include "../Functions/functions.h" // Expon Definition
+	#include "math.h"
 
 
 	// Bynomial Factor

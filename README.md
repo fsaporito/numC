@@ -7,7 +7,9 @@ C numerical library that implements various algorithms for
 - Definite Integrals
 - Descriptive Statistics
 - Linear algebra
+- Matrices
 - Roots
+- Vectors
 
 
 
@@ -49,6 +51,14 @@ Dispersion -> https://en.wikipedia.org/wiki/Statistical_dispersion
 - Absolute Mean Value
 - Coefficient Of Variation
 
+
+
+====
+Matrices
+
+- Determinant
+- Submatrix
+- Matrix Print
 
 
 ====
