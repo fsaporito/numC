@@ -3,7 +3,13 @@
 
 int main ( int argc, char **argv ) {
 	
-	test_matrix (3);
+	int i = 1;
+	
+	for (i = 1; i <= 4; i++) {
+		
+		test_matrix (i);
+
+	}
 
 	return 0;
 
