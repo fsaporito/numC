@@ -1,7 +1,6 @@
+#ifndef _STATISTIC_DESCRIPTIVE_H
 
-#ifndef STATISTIC_DESCRIPTIVE_H
-
-	#define STATISTIC_DESCRIPTIVE_H
+	#define _STATISTIC_DESCRIPTIVE_H
 
 	#include "../Vectors/vector.h"
 	#include "math.h"

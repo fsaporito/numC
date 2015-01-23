@@ -1,7 +1,6 @@
+#ifndef _TEST_H_
 
-#ifndef TEST_H_
-
-	#define TEST_H_
+	#define _TEST_H_
 
 	#include "stdio.h"
 	
