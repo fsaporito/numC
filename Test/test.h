@@ -6,6 +6,8 @@
 	
 	#include "../Matrices/matrix.h"	
 
-	void test_matrix (int lenght);
+	int test_matrix (void);
 	
+	int test_det (int test_number, int length);
+
 #endif
