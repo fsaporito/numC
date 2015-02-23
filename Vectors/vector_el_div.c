@@ -13,9 +13,9 @@ double vector_el_div (double *vector, int lenght) {
 	double div; // n1 + n2 + n3 .... + nk
 	int h; // For Loop Variable
 
-	div = 1;
+	div = vector[0];
 
-	for (h = 0; h < lenght; h++) {
+	for (h = 1; h < lenght; h++) {
 
 		div /= vector[h];
 

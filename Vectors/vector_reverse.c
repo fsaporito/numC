@@ -12,12 +12,14 @@ void vector_reverse (double *vector, int lenght) {
 
 	int h;
 
+	#pragma omp parallel for
 	for ( h = 0; h < lenght; h++) {
 
 		vector_tmp[h] = vector[h];
 
 	}
 
+	#pragma omp parallel for
 	for ( h = 0; h < lenght; h++) {
 
 		vector[h] = vector_tmp[lenght-1-h];

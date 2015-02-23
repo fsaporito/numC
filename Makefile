@@ -20,7 +20,7 @@ NAMETEST=${NAME}_TEST
 # -fexpensive-optimizations => Add More Minor TIme Consuming Optimisations
 # -g => Adds Debug Informations To The Executable File
 # -Wall => Turns On Most Of Compiler Warnings
-CFLAGS=-O3 -finline-functions -findirect-inlining -fexpensive-optimizations
+CFLAGS=-O3 -finline-functions -findirect-inlining -fexpensive-optimizations -fopenmp
 DEBUG=-g -Wall -Wshadow -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes
 LIB=-shared -static
 

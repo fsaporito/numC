@@ -13,6 +13,7 @@ void vector_num_div (double *vector, double num, double *vector_result, int leng
 
 	int h; // For Loop Variable
 
+	#pragma omp parallel for
 	for (h = 0; h < lenght; h++) {
 
 		vector_result[h] = vector[h] / num;

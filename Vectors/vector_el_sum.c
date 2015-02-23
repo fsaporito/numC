@@ -15,7 +15,7 @@ double vector_el_sum (double *vector, int lenght) {
 
 	 sum = 0;
 
-	 for ( h = 0; h < lenght; h++) {
+	for ( h = 0; h < lenght; h++) {
 
 		 sum += vector[h];
 
