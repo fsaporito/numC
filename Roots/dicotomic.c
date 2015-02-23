@@ -16,11 +16,25 @@ inline double dicotomic (double extr_a, double extr_b, double (*function) (doubl
 	medium[0] = (extr_a + extr_b)/2;
 	M = function (medium[0]);
 
-	if( M == 0. ) { return medium[0]; }
+	if( M == 0. ) { 
+		
+		return medium[0]; 
+		
+	}
 
-	if( A*M < 0. ) { extr_b = medium[0]; B = M; }
+	if( A*M < 0. ) { 
+		
+		extr_b = medium[0]; 
+		B = M; 
+		
+	}
 
-	if( B*M < 0. ) { extr_a = medium[0]; A = M; }
+	if( B*M < 0. ) { 
+		
+		extr_a = medium[0]; 
+		A = M; 
+		
+	}
 
 	do {
 
@@ -29,11 +43,26 @@ inline double dicotomic (double extr_a, double extr_b, double (*function) (doubl
 		medium[inter] = (extr_a + extr_b)/2;
 		M = function (medium[inter]);
 
-		if( M == 0. ) { break; }
+		if( M == 0. ) { 
+			
+			break; 
+			
+		}
 
-		if( A*M < 0. ) { extr_b = medium[inter]; B = M; }
+		if( A*M < 0. ) { 
+			
+			extr_b = medium[inter]; 
+			B = M; 
+			
+		}
 
-		if( B*M < 0. ) { extr_a = medium[inter]; A = M; }
+		if( B*M < 0. ) { 
+			
+			extr_a = medium[inter]; 
+			A = M; 
+			
+		}
+		
 
 	} while (abs(medium[inter - 1] - medium[inter]) > precision || inter < MAX_INTER);
 
