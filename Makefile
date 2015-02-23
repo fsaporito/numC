@@ -70,7 +70,8 @@ STATISTIC_DESCRIPTIVE=./StatisticDescriptive/central_tendency.c \
 					  ./StatisticDescriptive/dispersion.c
 					  
 TEST=./Test/test.c \
-	 ./Test/test_matrix.c
+	 ./Test/test_matrix.c \
+	 ./Test/test_statistic_descriptive.c
 					  
 VECTORS=./Vectors/vector_el_div.c \
 		./Vectors/vector_el_mult.c \

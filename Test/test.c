@@ -12,6 +12,14 @@ int main ( int argc, char **argv ) {
 		return 1;
 
 	}
+	
+	res = test_statistic_descriptive ();
+
+	if (res == 1) {
+
+		return 1;
+
+	}
 
 	return 0;
 

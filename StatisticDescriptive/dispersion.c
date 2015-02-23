@@ -14,6 +14,7 @@ void variation (double *vector_data, double *vector_freq, double *vector_variati
 
 	Av = average_ari_pond (vector_data,vector_freq,lenght);
 
+	#pragma omp parallel for
 	for (i = 0; i < lenght; i++) { 
 		
 		vector_variation[i] = vector_data[i] - Av; 
@@ -99,7 +100,7 @@ double mean_abs (double *vector_data, double *vector_freq, int lenght) {
 
 // Coefficient Of Variation
 /*
- * Sd = standard_deviation/average
+ * cv = standard_deviation/average_pond
  *
  */
 
@@ -116,4 +117,4 @@ double cv (double *vector_data, double *vector_freq, int lenght) { // Require va
 	return result;
 
 }
-
+	

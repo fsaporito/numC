@@ -1,6 +1,7 @@
 
 #include "statistic_descriptive.h"
 
+
 // Average Arithmetic
 /*
  * Av = ( n1 + n2 + n3 ..... nk ) / k
@@ -29,19 +30,19 @@ double average_ari (double *vector_data, int lenght) { // Require vector_el_sum
 
 double average_ari_pond (double *vector_data, double *vector_freq, int lenght) { // Require vector_el_sum && vector_vector_mult && vector_num_div
 
-	double fr_sum;
+	double fr_sum = 0.0;
 	double mult[lenght];
 	double mult_fr[lenght];
-	double result;
+	double result = 0.0;
 
 	fr_sum = vector_el_sum (vector_data, lenght);
-
+	
 	vector_vector_mult (vector_data, vector_freq, mult, lenght);
-
+	
 	vector_num_div (mult, fr_sum, mult_fr, lenght);
-
-	result = vector_el_sum (mult, lenght);
-
+	
+	result = vector_el_sum (mult_fr, lenght);
+	
 	return result;
 
 }
