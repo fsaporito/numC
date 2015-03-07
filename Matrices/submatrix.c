@@ -7,7 +7,7 @@ inline void submatrix (double matrix[], double m_tmp[], int lenght, int I, int J
 	// Virtual Row Index
 	int i = 0;
 	
-	// Virtual Coloun Index
+	// Virtual Column Index
 	int j = 0;
 
 	// TMP Matrix Current Position

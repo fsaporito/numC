@@ -56,7 +56,8 @@ INTEGRALS=./Integrals/integ_rect.c \
 		  
 MATRICES=./Matrices/determinant.c \
 		 ./Matrices/matrix_print.c \
-	     ./Matrices/submatrix.c
+	     ./Matrices/submatrix.c \
+	     ./Matrices/swap.c
 		  
 NUMBER_THEORY=./NumberTheory/factorial.c \
 			  ./NumberTheory/perfect.c \

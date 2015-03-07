@@ -27,7 +27,7 @@ inline double matrix_det (double matrix[], int lenght) {
 
 			double m_tmp[lenght-1];;
 
-			int z;
+			int z = 0;
 
 			for (z = 0; z < lenght; z++) {
 

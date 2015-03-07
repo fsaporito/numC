@@ -14,6 +14,10 @@
 	
 	int test_det (int test_number, int length);
 	
+	int test_swap_row (int test_number);
+	
+	int test_swap_col (int test_number);
+	
 	int test_statistic_descriptive (void);
 
 #endif
