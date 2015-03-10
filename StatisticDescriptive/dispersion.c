@@ -14,7 +14,7 @@ void variation (double *vector_data, double *vector_freq, double *vector_variati
 
 	Av = average_ari_pond (vector_data,vector_freq,lenght);
 
-	#pragma omp parallel for
+	#pragma omp parallel for private(i)
 	for (i = 0; i < lenght; i++) { 
 		
 		vector_variation[i] = vector_data[i] - Av; 
@@ -86,6 +86,7 @@ double mean_abs (double *vector_data, double *vector_freq, int lenght) {
 
 	average = average_ari (vector_data, lenght);
 
+	#pragma omp parallel for private(i) reduction(+: result)
 	for (i = 0; i < lenght; i++) {
 
 		result += abs(vector_data[i] - average);
@@ -107,11 +108,32 @@ double mean_abs (double *vector_data, double *vector_freq, int lenght) {
 double cv (double *vector_data, double *vector_freq, int lenght) { // Require variance
 
 	double result;
+	double stand_deviation;
+	double avg_pond;
+	
 
-	double stand_deviation = standard_deviation (vector_data, vector_freq, lenght);
+	// Standard Deviation And Ponderate Average Calculation
+	#pragma omp parallel sections 
+	{
+		
+		// Standard Deviation
+		#pragma omp section 
+		{
+		
+			stand_deviation = standard_deviation (vector_data, vector_freq, lenght);
+			
+		}
 
-	double avg_pond =  average_ari_pond (vector_data, vector_freq, lenght);
+		// Ponderate Average
+		#pragma omp section 
+		{
+			
+			avg_pond =  average_ari_pond (vector_data, vector_freq, lenght);
+	
+		}
 
+	}
+	
 	result = stand_deviation / avg_pond;
 
 	return result;

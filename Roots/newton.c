@@ -31,15 +31,34 @@ inline double newton (double extr_a, double extr_b, double (*function) (double x
 	der[0] = deriv1 (X[0]); // deriv1(seed)
 
 
+	// Main Calculation Loop
 	do {
 
 		inter ++; // Increase Interaction
 
 		X[inter] = X[inter-1] - (funz[inter-1] / der[inter-1] );  // New Point
 
-		funz[inter] = function (X[inter]); // function[X[i]
-
-		der[inter] = deriv1 (X[inter]);  // deriv1(X[i]
+		// Function And Derivative In X[Inter] Calculation
+		#pragma omp parallel sections 
+		{
+			
+			// Function In X[Inter]
+			#pragma omp section 
+			{
+				
+				funz[inter] = function (X[inter]); // function[X[i]
+					
+			}
+			
+			// Derivative In X[Inter]
+			#pragma omp section 
+			{
+				
+				der[inter] = deriv1 (X[inter]);  // deriv1(X[i]
+					
+			}
+			
+		}
 
 	} while (abs(X[inter - 1] - X[inter]) > precision || inter < MAX_INTER);
 

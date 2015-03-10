@@ -14,7 +14,7 @@ void vector_vector_inner (double *vector1, double *vector2, double result, int l
 
 	int i; // For Loop Variable
 
-	#pragma omp parallel for
+	#pragma omp parallel for private(i)
 	for (i = 0; i < lenght; i++) {
 
 		vector_tmp[i] = 0;

@@ -74,8 +74,6 @@ inline void integ_rect (double (function) (double x), double extr_a, double extr
 
 		*integ_second += base*Y[i];
 
-
-
 	}
 
 }

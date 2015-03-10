@@ -13,7 +13,7 @@ void vector_num_mult (double *vector, double num, double *vector_result, int len
 
 	int h; // For Loop Variable
 
-	#pragma omp parallel for
+	#pragma omp parallel for private(h)
 	for (h = 0; h < lenght; h++) {
 
 		vector_result[h] = vector[h] * num;

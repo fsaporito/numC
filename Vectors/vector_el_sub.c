@@ -15,6 +15,7 @@ double vector_el_sub (double *vector, int lenght) {
 
 	 sub = vector[0];
 
+	#pragma omp parallel for private(h) reduction(-:sub)
 	 for ( h = 1; h < lenght; h++) {
 
 		 sub -= vector[h];

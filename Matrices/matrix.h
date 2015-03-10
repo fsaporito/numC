@@ -6,6 +6,7 @@
 	
 	#include "stdio.h"
 	#include "math.h"
+	#include "../Vectors/vector.h"
 
 
 	// Matrix Print

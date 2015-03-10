@@ -28,8 +28,27 @@ inline double integ_trap (double (function) (double x), double extr_a, double ex
 
 	base = abs((extr_b - extr_a)/intervals_num);
 
-	funz_extr_a = function (extr_a);
-	funz_extr_b = function (extr_b);
+	// Function At Extrema
+	#pragma omp parallel sections 
+	{
+		
+		// Function At extr_a
+		#pragma omp section 
+		{ 
+			
+			funz_extr_a = function (extr_a); 
+			
+		}
+		
+		// Function At extr_b
+		#pragma omp section 
+		{ 
+			
+			funz_extr_b = function (extr_b); 
+			
+		}
+		
+	}
 
 
 
@@ -43,10 +62,17 @@ inline double integ_trap (double (function) (double x), double extr_a, double ex
 //////////////////////////////////////////////////////////////////////////
 
 // First Point Definition
+	if (extr_b > extr_a) { 
+		
+		X[0] = extr_a; 
+		
+	}
 
-	if (extr_b > extr_a) { X[0] = extr_a; }
-
-	if (extr_b < extr_a) { X[0] = extr_b; }
+	if (extr_b < extr_a) { 
+		
+		X[0] = extr_b; 
+		
+	}
 
 	Y[0] = function (X[0]);
 

@@ -63,20 +63,36 @@ inline double integ_cav_simpson (double (function) (double x), double extr_a, do
 	}
 
 // Points'Images Calculation
-
-	odd_sum = 0;
-
-	for (i = 1; i <= (2*intervals_num-1); i += 2) { 
+	#pragma omp parallel sections 
+	{
 		
-		odd_sum += Y[i]; 
-		
-	}
+		// Odd Sum Calculation
+		#pragma omp section 
+		{	
+			
+			odd_sum = 0;
 
-	even_sum = 0;
-
-	for (i = 2; i <= (2*intervals_num-2); i += 2 ) { 
+			for (i = 1; i <= (2*intervals_num-1); i += 2) { 
 		
-		even_sum += Y[i]; 
+			odd_sum += Y[i]; 
+		
+			}
+			
+		}	
+
+		// Even Sum Calculation
+		#pragma omp section 
+		{	
+			
+			even_sum = 0;
+	
+			for (i = 2; i <= (2*intervals_num-2); i += 2 ) { 
+		
+				even_sum += Y[i]; 
+		
+			}
+			
+		}
 		
 	}
 

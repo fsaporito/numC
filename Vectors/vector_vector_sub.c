@@ -13,7 +13,7 @@ void vector_vector_sub (double *vector1, double *vector2, double *vector_result,
 
 	int h; // For Loop Variable
 
-	#pragma omp parallel for
+	#pragma omp parallel for private(h)
 	for (h = 0; h < lenght; h++) {
 
 		vector_result[h] = vector1[h] - vector2[h];

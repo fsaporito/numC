@@ -15,6 +15,7 @@ double vector_el_mult (double *vector, int lenght) {
 
 	 mult = 1;
 
+	#pragma omp parallel for private(h) reduction(*:mult)
 	 for ( h = 0; h < lenght; h++) {
 
 		 mult *= vector[h];

@@ -20,6 +20,7 @@ inline int isPerfect (int number) {
 		long int i = 0;
 		long int tmp = 0;
 
+		#pragma omp parallel for private(i) reduction(+:tmp)
 		for (i = 1; i <= (number/2); i++) {
 
 			if (number%i == 0) {

@@ -112,7 +112,7 @@ int test_det (int test_number, int length) {
 		matrix_tmp[14] = -1;
 		matrix_tmp[15] = -9;
 
-		exp_det = -66146.0;
+		exp_det = 22984.0;
 
 	} else {
 

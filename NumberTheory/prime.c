@@ -26,7 +26,7 @@ inline int isPrime (int number) {
 		}
 
 		// Exclude 2 Multiplex
-		for (i=3; i<=square; i=i+2) {
+		for (i = 3; i <= square; i = i+2) {
 
 			if (number%i == 0) {
 

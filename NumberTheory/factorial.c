@@ -62,6 +62,8 @@ inline long long int fact_iterative (int number) {
 		if ( number != 0 ) {
 
 			int i = 0; // For Loop Variable
+			
+			#pragma omp parallel for private(i) reduction(*:factorial)
 			for ( i = 1; i <= number; i++) {
 
 				factorial *= i;

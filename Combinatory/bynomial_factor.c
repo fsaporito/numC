@@ -12,7 +12,7 @@
 
 long int bynomial_factor (int n, int k) { // Require Fact
 
-	long int result; // Result To Return
+	long int result = 1; // Result To Return
 	int limit; // n-k+1
 	long int k_fact; // K Factorial
 	int t; // For Loop Variable
@@ -26,17 +26,26 @@ long int bynomial_factor (int n, int k) { // Require Fact
 
 	// n - k + 1
 	limit = n - k + 1;
+	
+	// Factorial And Productorial Calculation
+	#pragma omp parallel sections
+	{
+		// K Factorial
+		#pragma omp section
+		{ k_fact = fact_iterative (k); }
 
-	// K Factorial
-	k_fact = fact_iterative (k);
+		// Product Of All Terms From n To The limit
+		#pragma omp section
+		{ 
+		
+			for (t = n; t >= limit; t--) {
 
-	// Result Calculation
-	result = 1;
+				result *= t;
 
-	for (t = n; t >= limit; t--) {
-
-		result *= t;
-
+			}
+			
+		}
+		
 	}
 
 	result /= k_fact;

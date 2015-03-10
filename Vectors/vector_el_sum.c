@@ -10,18 +10,19 @@
 
 double vector_el_sum (double *vector, int lenght) {
 
-	 double sum; // n1 + n2 + n3 .... + nk
-	 int h; // For Loop Variable
+	double sum; // n1 + n2 + n3 .... + nk
+	int h; // For Loop Variable
 
-	 sum = 0;
+	sum = 0;
 
+	#pragma omp parallel for private(h) reduction(+:sum)
 	for ( h = 0; h < lenght; h++) {
 
 		 sum += vector[h];
 
-	 }
+	}
 
-	 return sum;
+	return sum;
 
 }
 

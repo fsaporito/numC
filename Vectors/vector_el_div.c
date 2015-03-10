@@ -15,9 +15,10 @@ double vector_el_div (double *vector, int lenght) {
 
 	div = vector[0];
 
+	#pragma omp parallel for private(h) reduction(*:div)
 	for (h = 1; h < lenght; h++) {
 
-		div /= vector[h];
+		div *= 1/vector[h];
 
 	}
 
