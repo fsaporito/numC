@@ -102,7 +102,7 @@ all:
 	# Make Clean
 	make clean
 	
-	#GCC Compiler
+	# GCC Compiler -> Library Compilation
 	${CC} -o ${OUT}/${NAME}.so ${SOURCE} ${HEADERS} ${CFLAGS} ${MATH} ${LIB}
 	
 	# Creating The Library Header File
@@ -120,13 +120,42 @@ all:
 	cat ${HEADERS} | sed '/#include/ d' | sed '/#ifndef/ d' | sed '/#endif/ d' | sed '/#define _/ d' >> ${OUT}/${NAME}.h
 	echo "" >> ${OUT}/${NAME}.h
 	echo "#endif\n" >> ${OUT}/${NAME}.h
+
+	# Copy Files In Main Directory
+	cp ${OUT}/${NAME}.so ${NAME}.so
+	cp ${OUT}/${NAME}.h ${NAME}.h
 	
 debug:
+	# Make Clean
+	make clean
+	
+	# GCC Compiler -> Library Compilation (With Debug Enabled)
 	${CC} -o ${OUT}/${NAME} ${SOURCE} ${HEADERS} ${CFLAGS} ${DEBUG} ${MATH} ${LIB}
 	
+	# Creating The Library Header File
+	echo "#ifndef _NUMC_H" >> ${OUT}/${NAME}.h
+	echo "#define _NUMC_H" >> ${OUT}/${NAME}.h
+	echo "" >> ${OUT}/${NAME}.h
+	
+	# Add standard libraries headers
+	echo "#include \"stdio.h"\" >> ${OUT}/${NAME}.h
+	echo "#include \"stdlib.h"\" >> ${OUT}/${NAME}.h
+	echo "#include \"math.h"\" >> ${OUT}/${NAME}.h
+	echo "" >> ${OUT}/${NAME}.h
+	
+	# Remove #include, #ifndef and #endif lines from the original headers
+	cat ${HEADERS} | sed '/#include/ d' | sed '/#ifndef/ d' | sed '/#endif/ d' | sed '/#define _/ d' >> ${OUT}/${NAME}.h
+	echo "" >> ${OUT}/${NAME}.h
+	echo "#endif\n" >> ${OUT}/${NAME}.h
+
+	# Copy Files In Main Directory
+	cp ${OUT}/${NAME}.so ${NAME}.so
+	cp ${OUT}/${NAME}.h ${NAME}.h
+
 test:
-	make all
+	#make all
 	${CC} -o ${OUT}/${NAME_TEST} ${SOURCE_TEST} ${HEADERS_TEST} ${CFLAGS} ${MATH} ${LIB_LOAD}
+	cp ${OUT}/${NAME_TEST} ${NAME_TEST}
 	
 clean:
 	-rm -f ${NAME}
